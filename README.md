@@ -1,1 +1,4 @@
-# cloudrunTest
+```
+npm install
+npm run dev
+```
