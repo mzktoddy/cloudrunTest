@@ -4,4 +4,4 @@ dbs:
       # - url: gs://litestream-bucket-1
         type: gcs
         bucket: litestream-bucket-1
-        path: /db/database.db
+        path: /database.db

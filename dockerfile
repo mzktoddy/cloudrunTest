@@ -19,8 +19,8 @@ COPY --from=builder /app/.next /app/.next
 COPY --from=builder /app/public /app/public
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/package.json /app/package.json
-COPY --from=builder /data.db /data.db
+COPY --from=builder /database.db /database.db
 COPY --from=builder /litestream.yml /etc/litestream.yml
 COPY --from=builder /usr/local/bin/litestream /usr/local/bin/litestream
-COPY --from=builder /app/run.sh /run.sh
+COPY --from=builder /run.sh /run.sh
 CMD ["sh", "run.sh"]
