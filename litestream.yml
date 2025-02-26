@@ -1,7 +1,4 @@
 dbs:
-  - path: ./database.db
+  - path: ./data.db
     replicas:
-      # - url: gs://litestream-bucket-1
-        type: gcs
-        bucket: litestream-bucket-1
-        path: /database.db
+      - url: gcs://litestream-bucket-1/replicas
