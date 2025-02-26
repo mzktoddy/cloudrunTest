@@ -1,4 +1,0 @@
-dbs:
-  - path: ./data.db
-    replicas:
-      - url: gcs://litestream-bucket-1/replicas

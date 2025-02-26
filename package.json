@@ -1,35 +1,20 @@
 {
-  "name": "next",
+  "name": "nextjs-cloudrun-app",
   "version": "0.1.0",
   "private": true,
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
-  },
   "scripts": {
-    "dev": "next dev -p 8080",
-    "build": "next build -p 8080",
-    "start": "next start -p 8080",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^6.4.1",
-    "next": "12.3.0",
-    "ohmyfetch": "^0.4.18",
+    "next": "13.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "swr": "^1.3.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.7.18",
-    "@types/react": "18.0.20",
-    "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.10",
-    "eslint": "8.23.1",
-    "eslint-config-next": "12.3.0",
-    "postcss": "^8.4.16",
-    "prisma": "^6.4.1",
-    "tailwindcss": "^3.4.17",
-    "ts-node": "^10.9.1",
-    "typescript": "^5"
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.0"
   }
 }
