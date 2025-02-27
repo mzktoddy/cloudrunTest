@@ -1,18 +1,20 @@
-# base image
-FROM node:16.15.1-slim
+# Use Node.js as the base image
+FROM node:18.17.0-alpine
 
-# Create and change to the app directory.
-WORKDIR /usr/app
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure copying both package.json AND package-lock.json (when available).
-# Copying this first prevents re-running npm install on every code change.
+# Copy package.json and yarn.lock to the container
+COPY package.json yarn.lock ./
+
+# Install dependencies
+RUN yarn install --frozen-lockfile
+
+# Copy the app's source code to the container
 COPY . .
 
-# Install production dependencies.
-# If you add a package-lock.json, speed your build by switching to 'npm ci'.
-RUN npm ci --only=production
+# Build the Next app
+RUN yarn build
 
-RUN npm run build
-
-CMD ["npm", "run dev"]
+# Serve the production build
+CMD ["yarn", "start"]
